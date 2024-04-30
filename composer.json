@@ -125,6 +125,7 @@
             "@drupal:install",
             "drush config:set --yes system.logging error_level verbose",
             "drush pm:enable --yes default_content",
+            "drush user:password admin admin",
             "drush user:password editor editor",
             "drush user:unblock editor"
         ],
@@ -139,7 +140,7 @@
     },
     "scripts-descriptions": {
         "drupal:install": "Installs Starshot.",
-        "drupal:install-dev": "Installs Starshot, with additional modules and configuration tweaks for development.",
+        "drupal:install-dev": "Installs Starshot, with additional modules and configuration tweaks for local development. Do NOT use for a real site; this is not a secure configuration!",
         "drupal:run-server": "Runs Starshot using the PHP webserver and opens it in the default browser."
     },
     "scripts-aliases": {

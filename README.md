@@ -21,7 +21,7 @@ composer create-project drupal/starshot-project --repository='{"type":"vcs","url
 cd starshot-project
 composer install
 composer drupal:set-db -- mysql://drupal:drupal@localhost/starshot
-composer drupal:install
+composer run post-create-project-cmd
 ```
 
 ### Included modules and themes

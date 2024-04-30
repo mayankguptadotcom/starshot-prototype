@@ -2,6 +2,5 @@ command:
   site:
     install:
       options:
-        account-pass: admin
         db-url: sqlite://db.sqlite
         site-name: 'Starshot'
