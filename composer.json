@@ -46,6 +46,7 @@
         "drupal/starshot-core": "^10.3",
         "drupal/webform": "^6.2",
         "drush/drush": "^12.5",
+        "grasmash/yaml-cli": "^3.2",
         "oomphinc/composer-installers-extender": "^2"
     },
     "require-dev": {
@@ -111,6 +112,9 @@
         }
     },
     "scripts": {
+        "drupal:set-db": [
+            "yaml-cli --quiet update:value drush/drush.yml command.site.install.options.db-url"
+        ],
         "drupal:install": [
             "drush site-install minimal --yes --quiet",
             "cd web && php core/scripts/drupal recipe ../recipes/starshot",
