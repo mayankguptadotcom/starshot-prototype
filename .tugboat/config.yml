@@ -35,6 +35,15 @@ services:
           sudo cp web/sites/example.settings.local.php \
             web/sites/default/settings.local.php
 
+        # Set trusted_host_patterns configuration.
+        # https://main-fw6eaiqwuojqnlnerzwoc8rf2ca8t4qq.tugboatqa.com/
+        - |
+          echo "
+          \$settings['trusted_host_patterns'] = [
+            '^.*tugboatqa.com\$',
+          ];" \
+            | tee -a sites/default/settings.php
+
         # Make everything writable.
         - sudo chmod -R 777 "${DOCROOT}"
 
